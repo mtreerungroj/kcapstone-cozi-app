@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Login from './Login'
+import Cozi from './Cozi/Cozi'
 
 class App extends Component {
   constructor (props) {
@@ -9,22 +10,14 @@ class App extends Component {
     }
   }
 
-  toggleAuth = () => {
-    this.setState({ isAuth: !this.state.isAuth })
-    console.log(this.state)
-  }
+  toggleAuth = () => this.setState({ isAuth: !this.state.isAuth })
 
   render () {
-    return (
-      <div
-        style={{
-          height: '100vh'
-          // backgroundColor: 'black'
-        }}
-      >
+    return this.state.isAuth
+      ? <Cozi toggleAuth={this.toggleAuth} />
+      : <div style={{ height: '100vh' }}>
         <Login toggleAuth={this.toggleAuth} />
       </div>
-    )
   }
 }
 
