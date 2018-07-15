@@ -43,6 +43,7 @@ class Login extends Component {
             label='Password'
             placeholder='Password'
             margin='normal'
+            type={this.state.showPassword ? 'text' : 'password'}
           />
           <FormControlLabel
             control={
