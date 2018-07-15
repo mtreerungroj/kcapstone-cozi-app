@@ -75,7 +75,10 @@ class Login extends Component {
           <img src={loginwith} alt='login with' style={{ width: '100%' }} />
           <div style={{ textAlign: 'center', marginTop: 20 }}>
             <Typography variant='body1'>
-              Create new account <a href='url'>Sign up</a>
+              Create new account {' '}
+              <a style={{ color: 'blue' }} onClick={this.props.toggleRegister}>
+                <u>Sign up</u>
+              </a>
             </Typography>
           </div>
         </div>
