@@ -1,21 +1,6 @@
 import React, { Component } from 'react'
 import Login from './Login'
 
-// import { createMuiTheme } from '@material-ui/core/styles'
-
-// // Theme
-// const theme = createMuiTheme({
-//   fontFamily: 'Kanit, sans-serif',
-//   palette: {
-//     primary: {
-//       main: '#FFFACD'
-//     },
-//     secondary: {
-//       main: '#000000'
-//     }
-//   }
-// })
-
 class App extends Component {
   constructor (props) {
     super(props)
@@ -34,7 +19,7 @@ class App extends Component {
       <div
         style={{
           height: '100vh'
-          // backgroundColor: 'red'
+          // backgroundColor: 'black'
         }}
       >
         <Login toggleAuth={this.toggleAuth} />

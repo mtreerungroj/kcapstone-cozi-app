@@ -23,7 +23,7 @@ class Login extends Component {
   render () {
     return (
       <div>
-        <img src={logo} style={{ width: '100%' }} />
+        <img src={logo} alt='logo' style={{ width: '100%' }} />
         <div
           style={{
             marginLeft: 80,
@@ -37,7 +37,6 @@ class Login extends Component {
             label='Username'
             placeholder='Username'
             margin='normal'
-            underlineStyle={{ borderColor: 'white' }}
           />
           <TextField
             id='password'
@@ -58,11 +57,7 @@ class Login extends Component {
           <div
             style={{ marginTop: 20, width: 'fitContent', textAlign: 'center' }}
           >
-            <Button
-              onClick={this.props.toggleAuth}
-              variant='outlined'
-              color='#FFFACD'
-            >
+            <Button onClick={this.props.toggleAuth} variant='outlined'>
               Login
             </Button>
           </div>
@@ -76,7 +71,7 @@ class Login extends Component {
               or log in with
             </Typography>
           </div>
-          <img src={loginwith} style={{ width: '100%' }} />
+          <img src={loginwith} alt='login with' style={{ width: '100%' }} />
           <div style={{ textAlign: 'center', marginTop: 20 }}>
             <Typography variant='body1'>
               Create new account <a href='url'>Sign up</a>
