@@ -43,14 +43,13 @@ export default class Cozi extends Component {
     return (
       <div
         style={{
-          backgroundColor: 'red',
           height: '100vh',
           display: 'flex',
           flexDirection: 'column',
           flex: 1
         }}
       >
-        <div style={{ backgroundColor: 'blue', display: 'flex', flex: 1 }}>
+        <div style={{ display: 'flex', flex: 1 }}>
           {this.renderBody()}
         </div>
         <div>

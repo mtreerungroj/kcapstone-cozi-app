@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
 import mypointbg from '../assets/images/mypoint-bg.PNG'
+import FavCards from './FavCards'
 
 export default class HomePage extends Component {
   constructor (props) {
@@ -18,7 +19,7 @@ export default class HomePage extends Component {
     return (
       <div
         style={{
-          backgroundColor: 'red',
+          // backgroundColor: 'red',
           height: '100vh',
           display: 'flex',
           flexDirection: 'column',
@@ -34,13 +35,7 @@ export default class HomePage extends Component {
             </Toolbar>
           </AppBar>
         </div>
-        <div
-          style={{
-            backgroundColor: 'yellow'
-            // display: 'flex',
-            // flex: 1
-          }}
-        >
+        <div>
           <Typography variant='headline' color='inherit' align='center'>
             My cozi+ points
           </Typography>
@@ -69,6 +64,7 @@ export default class HomePage extends Component {
           <Typography variant='headline' color='inherit' align='center'>
             Favorite cards
           </Typography>
+          <FavCards />
         </div>
       </div>
     )
