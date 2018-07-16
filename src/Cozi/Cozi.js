@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import Button from '@material-ui/core/Button'
 import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
 import AppBar from '@material-ui/core/AppBar'
@@ -37,7 +36,7 @@ export default class Cozi extends Component {
       case 'mycards':
         return <MyCards />
       case 'profile':
-        return <Profile />
+        return <Profile toggleAuth={this.props.toggleAuth} />
       default:
         return <Home />
     }
@@ -56,22 +55,6 @@ export default class Cozi extends Component {
           flex: 1
         }}
       >
-        {/* <div>
-          <AppBar position='static' color='default'>
-            <Toolbar>
-              <IconButton
-                color='inherit'
-                aria-label='Menu'
-                onClick={this.props.toggleRegister}
-              >
-                <KeyboardArrowLeft />
-              </IconButton>
-              <Typography variant='title' color='inherit' align='center'>
-                COZI+
-              </Typography>
-            </Toolbar>
-          </AppBar>
-        </div> */}
         <div style={{ backgroundColor: 'blue', display: 'flex', flex: 1 }}>
           {this.renderBody()}
         </div>
@@ -103,21 +86,3 @@ export default class Cozi extends Component {
     )
   }
 }
-
-// render () {
-
-//   return (
-//     <div
-//       style={{
-//         display: 'flex',
-//         flexDirection: 'column'
-//       }}
-//     >
-//       Welcome to Cozi+
-//       <Button onClick={this.props.toggleAuth} variant='outlined'>
-//         Log out
-//       </Button>
-
-//     </div>
-//   )
-// }

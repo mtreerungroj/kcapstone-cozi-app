@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
@@ -32,8 +32,18 @@ export default class Profile extends Component {
             </Toolbar>
           </AppBar>
         </div>
-        <div style={{ backgroundColor: 'orange', display: 'flex', flex: 1 }}>
+        <div
+          style={{
+            backgroundColor: 'orange',
+            display: 'flex',
+            flexDirection: 'column',
+            flex: 1
+          }}
+        >
           Profile
+          <Button onClick={this.props.toggleAuth} variant='outlined'>
+            Log out
+          </Button>
         </div>
       </div>
     )
