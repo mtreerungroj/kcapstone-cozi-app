@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
 
 import Home from '@material-ui/icons/Home'
 import Store from '@material-ui/icons/Store'

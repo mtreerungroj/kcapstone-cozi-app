@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+
 // import Button from '@material-ui/core/Button'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
+import Button from '@material-ui/core/Button'
+
+import mypointbg from '../assets/images/mypoint-bg.PNG'
 
 export default class HomePage extends Component {
   constructor (props) {
@@ -32,8 +34,41 @@ export default class HomePage extends Component {
             </Toolbar>
           </AppBar>
         </div>
-        <div style={{ backgroundColor: 'yellow', display: 'flex', flex: 1 }}>
-          Home
+        <div
+          style={{
+            backgroundColor: 'yellow'
+            // display: 'flex',
+            // flex: 1
+          }}
+        >
+          <Typography variant='headline' color='inherit' align='center'>
+            My cozi+ points
+          </Typography>
+          <div style={{ position: 'relative' }}>
+            <img
+              src={mypointbg}
+              alt='mypoint-bg'
+              style={{
+                width: '100%',
+                height: 'auto'
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                color: '#ECCA52',
+                top: 120,
+                left: 250
+              }}
+            >
+              <Button variant='contained' color='secondary'>
+                Redeem
+              </Button>
+            </div>
+          </div>
+          <Typography variant='headline' color='inherit' align='center'>
+            Favorite cards
+          </Typography>
         </div>
       </div>
     )

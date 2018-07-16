@@ -3,8 +3,6 @@ import Button from '@material-ui/core/Button'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
 
 export default class Profile extends Component {
   constructor (props) {
