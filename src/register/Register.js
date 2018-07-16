@@ -14,7 +14,14 @@ export default class Register extends Component {
 
   render () {
     return this.state.isFirstPage
-      ? <Register1 togglePage={this.togglePage} />
-      : <Register2 />
+      ? <Register1
+        togglePage={this.togglePage}
+        toggleRegister={this.props.toggleRegister}
+        />
+      : <Register2
+        toggleAuth={this.props.toggleAuth}
+        togglePage={this.togglePage}
+        toggleRegister={this.props.toggleRegister}
+        />
   }
 }

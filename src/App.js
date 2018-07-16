@@ -8,7 +8,7 @@ class App extends Component {
     super(props)
     this.state = {
       isAuth: false,
-      isRegister: true
+      isRegister: false
     }
   }
 
@@ -19,7 +19,10 @@ class App extends Component {
     return this.state.isAuth
       ? <Cozi toggleAuth={this.toggleAuth} />
       : this.state.isRegister
-          ? <Register />
+          ? <Register
+            toggleAuth={this.toggleAuth}
+            toggleRegister={this.toggleRegister}
+            />
           : <div style={{ height: '100vh' }}>
             <Login
               toggleAuth={this.toggleAuth}

@@ -18,14 +18,14 @@ export default class Register1 extends Component {
       <div>
         <AppBar position='static' classes={{ colorDefault: 'black' }}>
           <Toolbar>
-            <IconButton color='inherit' aria-label='Menu'>
+            <IconButton
+              color='inherit'
+              aria-label='Menu'
+              onClick={this.props.toggleRegister}
+            >
               <KeyboardArrowLeft />
             </IconButton>
-            <Typography
-              variant='title'
-              color='inherit'
-              onClick={() => console.log('back')}
-            >
+            <Typography variant='title' color='inherit'>
               Sign up
             </Typography>
           </Toolbar>
