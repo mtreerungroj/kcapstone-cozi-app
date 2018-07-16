@@ -6,6 +6,9 @@ import Typography from '@material-ui/core/Typography'
 
 import cardStarbuck from '../assets/images/card-starbuck.png'
 
+import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use it manually.
+import 'simplebar/dist/simplebar.css'
+
 export default class Profile extends Component {
   renderCard = () => (
     <img
@@ -17,7 +20,7 @@ export default class Profile extends Component {
 
   render () {
     return (
-      <div>
+      <div data-simplebar style={{ height: 360 }}>
         {/* row 1 */}
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div

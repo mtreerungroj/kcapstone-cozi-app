@@ -61,10 +61,12 @@ export default class HomePage extends Component {
               </Button>
             </div>
           </div>
-          <Typography variant='headline' color='inherit' align='center'>
-            Favorite cards
-          </Typography>
-          <FavCards />
+          <div>
+            <Typography variant='headline' color='inherit' align='center'>
+              Favorite cards
+            </Typography>
+            <FavCards />
+          </div>
         </div>
       </div>
     )
