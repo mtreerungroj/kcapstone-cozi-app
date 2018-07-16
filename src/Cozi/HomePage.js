@@ -35,8 +35,8 @@ export default class HomePage extends Component {
             </Toolbar>
           </AppBar>
         </div>
-        <div>
-          <Typography variant='headline' color='inherit' align='center'>
+        <div style={{ marginTop: 10 }}>
+          <Typography variant='title' color='inherit' align='center'>
             My cozi+ points
           </Typography>
           <div style={{ position: 'relative' }}>
@@ -61,12 +61,12 @@ export default class HomePage extends Component {
               </Button>
             </div>
           </div>
-          <div>
-            <Typography variant='headline' color='inherit' align='center'>
-              Favorite cards
-            </Typography>
-            <FavCards />
-          </div>
+        </div>
+        <div style={{ marginTop: 10 }}>
+          <Typography variant='title' color='inherit' align='center'>
+            Favorite cards
+          </Typography>
+          <FavCards />
         </div>
       </div>
     )
