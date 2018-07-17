@@ -15,7 +15,7 @@ export default class Profile extends Component {
 
   render () {
     return (
-      <div data-simplebar style={{ height: 340 }}>
+      <div data-simplebar style={{ height: 363 }}>
         {/* row 1 */}
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div
