@@ -27,9 +27,9 @@ export default class HomePage extends Component {
         }}
       >
         <div>
-          <AppBar position='static' color='default'>
+          <AppBar position='static' color='secondary'>
             <Toolbar>
-              <Typography variant='title' color='inherit' align='center'>
+              <Typography variant='title' color='primary' align='center'>
                 COZI+
               </Typography>
             </Toolbar>
@@ -56,7 +56,7 @@ export default class HomePage extends Component {
                 left: 250
               }}
             >
-              <Button variant='contained' color='secondary'>
+              <Button variant='contained' color='primary'>
                 Redeem
               </Button>
             </div>

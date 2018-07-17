@@ -20,7 +20,7 @@ export default class PointHistory extends Component {
         }}
       >
         <div>
-          <AppBar position='static' color='default'>
+          <AppBar position='static' color='secondary'>
             <Toolbar>
               <IconButton
                 color='inherit'
@@ -29,7 +29,7 @@ export default class PointHistory extends Component {
               >
                 <KeyboardArrowLeft />
               </IconButton>
-              <Typography variant='title' color='inherit' align='center'>
+              <Typography variant='title' color='primary' align='center'>
                 Point history
               </Typography>
             </Toolbar>

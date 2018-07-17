@@ -22,9 +22,9 @@ export default class MyCards extends Component {
         }}
       >
         <div>
-          <AppBar position='static' color='default'>
+          <AppBar position='static' color='secondary'>
             <Toolbar>
-              <Typography variant='title' color='inherit' align='center'>
+              <Typography variant='title' color='primary' align='center'>
                 My Cards
               </Typography>
             </Toolbar>

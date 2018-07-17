@@ -32,9 +32,9 @@ export default class HomeProfile extends Component {
         }}
       >
         <div>
-          <AppBar position='static' color='default'>
+          <AppBar position='static' color='secondary'>
             <Toolbar>
-              <Typography variant='title' color='inherit' align='center'>
+              <Typography variant='title' color='primary' align='center'>
                 Profile
               </Typography>
             </Toolbar>
@@ -72,7 +72,7 @@ export default class HomeProfile extends Component {
               <div style={{ textAlign: 'center' }}>
                 <Button
                   variant='outlined'
-                  color='secondary'
+                  color='primary'
                   style={{ width: 160 }}
                 >
                   Edit profile
@@ -84,7 +84,7 @@ export default class HomeProfile extends Component {
           <div style={{ textAlign: 'center' }}>
             <Button
               variant='contained'
-              color='secondary'
+              color='primary'
               onClick={() => this.props.changePage('pointhistory')}
               style={{ width: 200, marginTop: 20, marginBottom: 40 }}
             >
