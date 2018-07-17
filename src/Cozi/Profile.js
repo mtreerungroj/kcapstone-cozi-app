@@ -15,11 +15,21 @@ export default class Profile extends Component {
   renderBody = () => {
     switch (this.state.page) {
       case 'home':
-        return <HomeProfile changePage={this.changePage} />
+        return (
+          <HomeProfile
+            changePage={this.changePage}
+            toggleAuth={this.props.toggleAuth}
+          />
+        )
       case 'pointhistory':
         return <PointHistory changePage={this.changePage} />
       default:
-        return <HomeProfile changePage={this.changePage} />
+        return (
+          <HomeProfile
+            changePage={this.changePage}
+            toggleAuth={this.props.toggleAuth}
+          />
+        )
     }
   }
 
