@@ -92,7 +92,7 @@ export default class Profile extends Component {
               color='secondary'
               style={{ width: 200, marginTop: 20, marginBottom: 40 }}
             >
-              <Storage />
+              <Storage style={{ marginRight: 10 }} />
               Point History
             </Button>
           </div>

@@ -46,7 +46,7 @@ export default class Promotion extends Component {
     return (
       <div
         style={{
-          backgroundColor: 'red',
+          // backgroundColor: 'red',
           height: '100vh',
           display: 'flex',
           flexDirection: 'column',
@@ -62,8 +62,8 @@ export default class Promotion extends Component {
             </Toolbar>
           </AppBar>
         </div>
-        <div style={{ backgroundColor: 'pink', display: 'flex', flex: 1 }}>
-          <div data-simplebar style={{ height: 623 }}>
+        <div style={{ display: 'flex', flex: 1 }}>
+          <div data-simplebar style={{ height: 603 }}>
             {this.renderPromotion(promotion1)}
             {this.renderPromotion(promotion2)}
             {this.renderPromotion(promotion3)}

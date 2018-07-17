@@ -13,75 +13,37 @@ export default class Profile extends Component {
     />
   )
 
+  renderRowCard = () => (
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div
+        style={{
+          flex: 1,
+          margin: 10,
+          marginRight: 5
+        }}
+      >
+        {this.renderCard()}
+      </div>
+      <div
+        style={{
+          flex: 1,
+          margin: 10,
+          marginLeft: 5
+        }}
+      >
+        {this.renderCard()}
+      </div>
+    </div>
+  )
+
   render () {
     return (
-      <div data-simplebar style={{ height: 363 }}>
-        {/* row 1 */}
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <div
-            style={{
-              flex: 1,
-              margin: 10,
-              marginRight: 5
-            }}
-          >
-            {this.renderCard()}
-          </div>
-          <div
-            style={{
-              flex: 1,
-              margin: 10,
-              marginLeft: 5
-            }}
-          >
-            {this.renderCard()}
-          </div>
-        </div>
-
-        {/* row 2 */}
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <div
-            style={{
-              flex: 1,
-              margin: 10,
-              marginRight: 5
-            }}
-          >
-            {this.renderCard()}
-          </div>
-          <div
-            style={{
-              flex: 1,
-              margin: 10,
-              marginLeft: 5
-            }}
-          >
-            {this.renderCard()}
-          </div>
-        </div>
-
-        {/* row 3 */}
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <div
-            style={{
-              flex: 1,
-              margin: 10,
-              marginRight: 5
-            }}
-          >
-            {this.renderCard()}
-          </div>
-          <div
-            style={{
-              flex: 1,
-              margin: 10,
-              marginLeft: 5
-            }}
-          >
-            {this.renderCard()}
-          </div>
-        </div>
-
+      <div data-simplebar style={{ height: 343 }}>
+        {this.renderRowCard()}
+        {this.renderRowCard()}
+        {this.renderRowCard()}
+        {this.renderRowCard()}
+        {this.renderRowCard()}
       </div>
     )
   }
