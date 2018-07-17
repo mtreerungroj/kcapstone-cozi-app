@@ -1,9 +1,4 @@
 import React, { Component } from 'react'
-import Button from '@material-ui/core/Button'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-
 import cardStarbuck from '../assets/images/card-starbuck.png'
 
 import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use it manually.
@@ -20,7 +15,7 @@ export default class Profile extends Component {
 
   render () {
     return (
-      <div data-simplebar style={{ height: 360 }}>
+      <div data-simplebar style={{ height: 340 }}>
         {/* row 1 */}
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           <div
