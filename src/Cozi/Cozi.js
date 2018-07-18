@@ -17,24 +17,58 @@ export default class Cozi extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      page: 'home'
+      page: 'home',
+      badge: true
     }
   }
 
   handleChange = (event, page) => this.setState({ page })
 
+  unBadge = () => this.setState({ badge: false })
+
   renderBody = () => {
     switch (this.state.page) {
       case 'home':
-        return <HomePage />
+        return (
+          <HomePage
+            handleChange={this.handleChange}
+            badge={this.state.badge}
+            unBadge={this.unBadge}
+          />
+        )
       case 'promotion':
-        return <Promotion />
+        return (
+          <Promotion
+            handleChange={this.handleChange}
+            badge={this.state.badge}
+            unBadge={this.unBadge}
+          />
+        )
       case 'mycards':
-        return <MyCards />
+        return (
+          <MyCards
+            handleChange={this.handleChange}
+            badge={this.state.badge}
+            unBadge={this.unBadge}
+          />
+        )
       case 'profile':
-        return <Profile toggleAuth={this.props.toggleAuth} />
+        return (
+          <Profile
+            toggleAuth={this.props.toggleAuth}
+            handleChange={this.handleChange}
+            badge={this.state.badge}
+            unBadge={this.unBadge}
+          />
+        )
       default:
-        return <Home />
+        return (
+          <Home
+            handleChange={this.handleChange}
+            badge={this.state.badge}
+            unBadge={this.unBadge}
+          />
+        )
     }
   }
 

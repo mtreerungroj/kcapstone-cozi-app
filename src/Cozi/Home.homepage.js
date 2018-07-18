@@ -5,6 +5,10 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import Badge from '@material-ui/core/Badge'
+import IconButton from '@material-ui/core/IconButton'
+import Notifications from '@material-ui/icons/Notifications'
+import Search from '@material-ui/icons/Search'
 
 import mypointbg from '../assets/images/mypoint-bg.PNG'
 import FavCards from './FavCards'
@@ -14,7 +18,6 @@ export default class HomeHomePage extends Component {
     return (
       <div
         style={{
-          // backgroundColor: 'red',
           height: '100vh',
           display: 'flex',
           flexDirection: 'column',
@@ -23,10 +26,41 @@ export default class HomeHomePage extends Component {
       >
         <div>
           <AppBar position='static' color='secondary'>
-            <Toolbar>
-              <Typography variant='title' color='primary' align='center'>
+            <Toolbar style={{ padding: 0 }}>
+              <Typography
+                variant='title'
+                color='primary'
+                align='center'
+                style={{ flexGrow: 1, marginLeft: 100 }}
+              >
                 COZI+
               </Typography>
+              {this.props.badge
+                ? <IconButton
+                  color='inherit'
+                  aria-label='notifications'
+                  style={{ marginRight: 0 }}
+                  >
+                  <Badge
+                    badgeContent={'3'}
+                    color='error'
+                    onClick={() => console.log('click')}
+                    >
+                    <Notifications />
+                  </Badge>
+                </IconButton>
+                : <IconButton
+                  color='inherit'
+                  aria-label='notifications'
+                  style={{ marginRight: 0 }}
+                  >
+                  <Notifications />
+                </IconButton>}
+
+              <IconButton color='inherit' aria-label='search'>
+                <Search />
+              </IconButton>
+
             </Toolbar>
           </AppBar>
         </div>

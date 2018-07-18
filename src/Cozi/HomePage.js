@@ -16,11 +16,29 @@ export default class HomePage extends Component {
   renderBody = () => {
     switch (this.state.page) {
       case 'home':
-        return <HomeHomepage changePage={this.changePage} />
+        return (
+          <HomeHomepage
+            changePage={this.changePage}
+            badge={this.props.badge}
+            unBadge={this.props.unBadge}
+          />
+        )
       case 'redeem':
-        return <Redeem changePage={this.changePage} />
+        return (
+          <Redeem
+            changePage={this.changePage}
+            badge={this.props.badge}
+            unBadge={this.props.unBadge}
+          />
+        )
       default:
-        return <HomeHomepage changePage={this.changePage} />
+        return (
+          <HomeHomepage
+            changePage={this.changePage}
+            badge={this.props.badge}
+            unBadge={this.props.unBadge}
+          />
+        )
     }
   }
 
