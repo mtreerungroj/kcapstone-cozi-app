@@ -3,10 +3,8 @@ import React, { Component } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import Divider from '@material-ui/core/Divider'
-import Card from '@material-ui/core/Card'
 
 import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use it manually.
 import 'simplebar/dist/simplebar.css'
@@ -60,8 +58,39 @@ export default class HomePromotion extends Component {
         </div>
         <div style={{ display: 'flex', flex: 1 }}>
           <div data-simplebar style={{ height: 603 }}>
-            {this.renderPromotion(promotion1)}
-            {this.renderPromotion(promotion2)}
+
+            <ListItem
+              button
+              onClick={() => this.props.changePage('detail1')}
+              style={{ padding: 0 }}
+            >
+              <img
+                src={promotion1}
+                alt={promotion1}
+                style={{
+                  width: '100%',
+                  height: 'auto'
+                }}
+              />
+            </ListItem>
+            <Divider />
+
+            <ListItem
+              button
+              onClick={() => this.props.changePage('detail2')}
+              style={{ padding: 0 }}
+            >
+              <img
+                src={promotion2}
+                alt={promotion2}
+                style={{
+                  width: '100%',
+                  height: 'auto'
+                }}
+              />
+            </ListItem>
+            <Divider />
+
             {this.renderPromotion(promotion3)}
             {this.renderPromotion(promotion4)}
             {this.renderPromotion(promotion5)}
