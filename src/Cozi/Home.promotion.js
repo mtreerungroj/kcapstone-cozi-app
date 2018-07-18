@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import Divider from '@material-ui/core/Divider'
 import Card from '@material-ui/core/Card'
 
 import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use it manually.
@@ -20,9 +22,9 @@ import promotion8 from '../assets/images/promotion8.PNG'
 import promotion9 from '../assets/images/promotion9.PNG'
 
 export default class HomePromotion extends Component {
-  renderPromotion = promotion => {
-    return (
-      <Card>
+  renderPromotion = promotion => (
+    <div>
+      <ListItem button style={{ padding: 0 }}>
         <img
           src={promotion}
           alt={promotion}
@@ -31,9 +33,10 @@ export default class HomePromotion extends Component {
             height: 'auto'
           }}
         />
-      </Card>
-    )
-  }
+      </ListItem>
+      <Divider />
+    </div>
+  )
 
   render () {
     return (
