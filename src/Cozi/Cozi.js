@@ -12,19 +12,24 @@ import HomePage from './HomePage'
 import Promotion from './Promotion'
 import MyCards from './MyCards'
 import Profile from './Profile'
+import Notifications from './Notifications'
 
 export default class Cozi extends Component {
   constructor (props) {
     super(props)
     this.state = {
       page: 'home',
-      badge: true
+      badge: true,
+      oldPage: 'home'
     }
   }
 
   handleChange = (event, page) => this.setState({ page })
 
   unBadge = () => this.setState({ badge: false })
+
+  openNotifications = oldPage =>
+    this.setState({ oldPage, page: 'notifications' })
 
   renderBody = () => {
     switch (this.state.page) {
@@ -34,6 +39,7 @@ export default class Cozi extends Component {
             handleChange={this.handleChange}
             badge={this.state.badge}
             unBadge={this.unBadge}
+            openNotifications={this.openNotifications}
           />
         )
       case 'promotion':
@@ -42,6 +48,7 @@ export default class Cozi extends Component {
             handleChange={this.handleChange}
             badge={this.state.badge}
             unBadge={this.unBadge}
+            openNotifications={this.openNotifications}
           />
         )
       case 'mycards':
@@ -50,6 +57,7 @@ export default class Cozi extends Component {
             handleChange={this.handleChange}
             badge={this.state.badge}
             unBadge={this.unBadge}
+            openNotifications={this.openNotifications}
           />
         )
       case 'profile':
@@ -59,14 +67,23 @@ export default class Cozi extends Component {
             handleChange={this.handleChange}
             badge={this.state.badge}
             unBadge={this.unBadge}
+            openNotifications={this.openNotifications}
+          />
+        )
+      case 'notifications':
+        return (
+          <Notifications
+            oldPage={this.oldPage}
+            handleChange={this.handleChange}
           />
         )
       default:
         return (
-          <Home
+          <HomePage
             handleChange={this.handleChange}
             badge={this.state.badge}
             unBadge={this.unBadge}
+            openNotifications={this.openNotifications}
           />
         )
     }

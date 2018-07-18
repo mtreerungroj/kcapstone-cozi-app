@@ -21,6 +21,7 @@ export default class HomePage extends Component {
             changePage={this.changePage}
             badge={this.props.badge}
             unBadge={this.props.unBadge}
+            openNotifications={this.props.openNotifications}
           />
         )
       case 'redeem':
@@ -29,6 +30,7 @@ export default class HomePage extends Component {
             changePage={this.changePage}
             badge={this.props.badge}
             unBadge={this.props.unBadge}
+            openNotifications={this.props.openNotifications}
           />
         )
       default:
@@ -37,6 +39,7 @@ export default class HomePage extends Component {
             changePage={this.changePage}
             badge={this.props.badge}
             unBadge={this.props.unBadge}
+            openNotifications={this.props.openNotifications}
           />
         )
     }

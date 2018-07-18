@@ -44,7 +44,7 @@ export default class HomeHomePage extends Component {
                   <Badge
                     badgeContent={'3'}
                     color='error'
-                    onClick={() => console.log('click')}
+                    onClick={() => this.props.openNotifications('home')}
                     >
                     <Notifications />
                   </Badge>
