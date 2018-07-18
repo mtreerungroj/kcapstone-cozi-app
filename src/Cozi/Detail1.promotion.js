@@ -3,8 +3,6 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
 import Avatar from '@material-ui/core/Avatar'
 import ListItem from '@material-ui/core/ListItem'
 
@@ -109,7 +107,8 @@ export default class Detail1Promotion extends Component {
             color='inherit'
             style={{ marginLeft: 40, marginRight: 40 }}
           >
-            🕒 From 29 June - 2 October 2018 (or until stock lasts)
+            <span role='img' aria-label='clock'>🕒</span>
+            From 29 June - 2 October 2018 (or until stock lasts)
           </Typography>
         </div>
 

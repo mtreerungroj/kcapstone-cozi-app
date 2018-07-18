@@ -3,8 +3,6 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
 import Avatar from '@material-ui/core/Avatar'
 import ListItem from '@material-ui/core/ListItem'
 
@@ -109,7 +107,8 @@ export default class Detail2Promotion extends Component {
             color='inherit'
             style={{ marginLeft: 40, marginRight: 40 }}
           >
-            🕒 Available on June 13rd at every Starbucks stores.
+            <span role='img' aria-label='clock'>🕒</span>
+            Available on June 13rd at every Starbucks stores.
           </Typography>
         </div>
 
