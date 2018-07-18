@@ -17,7 +17,7 @@ export default class Cozi extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      page: 'profile'
+      page: 'mycards'
     }
   }
 
