@@ -15,6 +15,18 @@ import promotionBurgerking from '../assets/images/promotion-burgerking.jpeg'
 import logoBurgerking from '../assets/images/logo-burgerking.png'
 
 export default class Detail1Promotion extends Component {
+  renderDetail = text => (
+    <div style={{ marginBottom: 20 }}>
+      <Typography
+        variant='body1'
+        color='inherit'
+        style={{ marginLeft: 40, marginRight: 40 }}
+      >
+        {text}
+      </Typography>
+    </div>
+  )
+
   render () {
     return (
       <div
@@ -52,7 +64,7 @@ export default class Detail1Promotion extends Component {
         />
         <Divider />
 
-        <ListItem>
+        <ListItem color='black'>
           <Avatar
             alt={logoBurgerking}
             src={logoBurgerking}
@@ -67,13 +79,40 @@ export default class Detail1Promotion extends Component {
             <Typography
               variant='title'
               color='inherit'
-              align='center'
               style={{ marginBottom: 10 }}
             >
               Burger King
             </Typography>
+            <Typography
+              variant='body2'
+              color='inherit'
+              style={{ marginBottom: 10 }}
+            >
+              Special menu with Angus XT set
+            </Typography>
           </div>
         </ListItem>
+
+        {this.renderDetail(
+          'Signature flame-grilled 100% Australian Angus beef and extra thick - 155 grams. You can enjoy the original Angus XT with our original steakhouse sauce, American cheese, thick-cut crispy bacon, fresh lettuce, crunchy pickles, and juicy tomatoes.'
+        )}
+        {this.renderDetail(
+          'Or you can enjoy our new special menu, the Angus XT Black Truffle, topped with Black Truffle sauce, imported from Italy and savory champignons.'
+        )}
+        {this.renderDetail(
+          'All value meals included regular fries and regular soft drink.'
+        )}
+
+        <div style={{ marginBottom: 20 }}>
+          <Typography
+            variant='body2'
+            color='inherit'
+            style={{ marginLeft: 40, marginRight: 40 }}
+          >
+            🕒 From 29 June - 2 October 2018 (or until stock lasts)
+          </Typography>
+        </div>
+
       </div>
     )
   }
