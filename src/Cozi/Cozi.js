@@ -26,10 +26,8 @@ export default class Cozi extends Component {
 
   handleChange = (event, page) => this.setState({ page })
 
-  unBadge = () => this.setState({ badge: false })
-
   openNotifications = oldPage =>
-    this.setState({ oldPage, page: 'notifications' })
+    this.setState({ oldPage, page: 'notifications', badge: false })
 
   renderBody = () => {
     switch (this.state.page) {
@@ -38,7 +36,6 @@ export default class Cozi extends Component {
           <HomePage
             handleChange={this.handleChange}
             badge={this.state.badge}
-            unBadge={this.unBadge}
             openNotifications={this.openNotifications}
           />
         )
@@ -47,7 +44,6 @@ export default class Cozi extends Component {
           <Promotion
             handleChange={this.handleChange}
             badge={this.state.badge}
-            unBadge={this.unBadge}
             openNotifications={this.openNotifications}
           />
         )
@@ -56,7 +52,6 @@ export default class Cozi extends Component {
           <MyCards
             handleChange={this.handleChange}
             badge={this.state.badge}
-            unBadge={this.unBadge}
             openNotifications={this.openNotifications}
           />
         )
@@ -66,7 +61,6 @@ export default class Cozi extends Component {
             toggleAuth={this.props.toggleAuth}
             handleChange={this.handleChange}
             badge={this.state.badge}
-            unBadge={this.unBadge}
             openNotifications={this.openNotifications}
           />
         )
@@ -82,7 +76,6 @@ export default class Cozi extends Component {
           <HomePage
             handleChange={this.handleChange}
             badge={this.state.badge}
-            unBadge={this.unBadge}
             openNotifications={this.openNotifications}
           />
         )
