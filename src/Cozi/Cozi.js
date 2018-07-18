@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
+import Divider from '@material-ui/core/Divider'
 
 import Home from '@material-ui/icons/Home'
 import Store from '@material-ui/icons/Store'
@@ -53,6 +54,7 @@ export default class Cozi extends Component {
           {this.renderBody()}
         </div>
         <div>
+          <Divider />
           <BottomNavigation
             value={page}
             onChange={this.handleChange}
