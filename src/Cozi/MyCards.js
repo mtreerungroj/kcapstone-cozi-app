@@ -13,12 +13,50 @@ import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use
 import 'simplebar/dist/simplebar.css'
 
 import user from '../assets/images/user.png'
+import shopBbqplaza from '../assets/images/shop_bbqplaza.png'
+import shopMk from '../assets/images/shop_mk.jpg'
+import shopAfteryou from '../assets/images/shop_afteryou.png'
+import shopShabushi from '../assets/images/shop_shabushi.jpg'
+import shopStarbucks from '../assets/images/shop_starbucks.jpg'
+import shopCoffee from '../assets/images/shop_coffee.png'
+import shopCosta from '../assets/images/shop_costa.png'
+import shopShabulaos from '../assets/images/shop_shabulaos.jpeg'
+import shopNamba from '../assets/images/shop_namba.jpeg'
+import shopShinkansen from '../assets/images/shop_shinkansen.jpeg'
+import shopOppadaek from '../assets/images/shop_oppadaek.jpeg'
+import shopGolddigger from '../assets/images/shop_golddigger.png'
+import shopOchaya from '../assets/images/shop_ochaya.png'
+import shopCow from '../assets/images/shop_cow.jpg'
+import shopSandp from '../assets/images/shop_sandp.jpg'
+import shopAuntie from '../assets/images/shop_auntie.png'
+import shopBake from '../assets/images/shop_bake.png'
+import shopBurgerking from '../assets/images/shop_burgerking.jpg'
+import shopHaagendazs from '../assets/images/shop_haagendazs.jpg'
+import shopHokkaido from '../assets/images/shop_hokkaido.png'
+import shopPablo from '../assets/images/shop_pablo.png'
+import shopKorean from '../assets/images/shop_korean.jpg'
+import shopIhop from '../assets/images/shop_ihop.jpg'
+import shopKfc from '../assets/images/shop_kfc.jpg'
+import shopSwensens from '../assets/images/shop_swensens.png'
+import shopMoomin from '../assets/images/shop_moomin.png'
+import shopPancake from '../assets/images/shop_pancake.png'
+import shopSweet from '../assets/images/shop_sweet.png'
 
 export default class MyCards extends Component {
   constructor (props) {
     super(props)
     this.state = {}
   }
+
+  renderCard = store => (
+    <IconButton
+      color='inherit'
+      aria-label='store'
+      style={{ width: 80, height: 80 }}
+    >
+      <Avatar alt={store} src={store} style={{ width: 80, height: 80 }} />
+    </IconButton>
+  )
 
   renderRowCard = (store1, store2, store3, store4) => (
     <div
@@ -30,10 +68,10 @@ export default class MyCards extends Component {
         marginBottom: 10
       }}
     >
-      <Avatar alt={store1} src={store1} style={{ width: 80, height: 80 }} />
-      <Avatar alt={store2} src={store2} style={{ width: 80, height: 80 }} />
-      <Avatar alt={store3} src={store3} style={{ width: 80, height: 80 }} />
-      <Avatar alt={store4} src={store4} style={{ width: 80, height: 80 }} />
+      {this.renderCard(store1)}
+      {this.renderCard(store2)}
+      {this.renderCard(store3)}
+      {this.renderCard(store4)}
     </div>
   )
 
@@ -108,7 +146,12 @@ export default class MyCards extends Component {
             </Typography>
           </div>
           <Card style={{ height: 100 }}>
-            {this.renderRowCard(user, user, user, user)}
+            {this.renderRowCard(
+              shopBbqplaza,
+              shopMk,
+              shopAfteryou,
+              shopShabushi
+            )}
           </Card>
 
           <div style={{ marginTop: 10, marginLeft: 10, marginBottom: 5 }}>
@@ -117,7 +160,12 @@ export default class MyCards extends Component {
             </Typography>
           </div>
           <Card style={{ height: 100 }}>
-            {this.renderRowCard(user, user, user, user)}
+            {this.renderRowCard(
+              shopStarbucks,
+              shopCoffee,
+              shopCosta,
+              shopShabushi
+            )}
           </Card>
 
           <div style={{ marginTop: 10, marginLeft: 10, marginBottom: 5 }}>
@@ -133,10 +181,46 @@ export default class MyCards extends Component {
                   flexDirection: ' column'
                 }}
               >
-                {this.renderRowCard(user, user, user, user)}
-                {this.renderRowCard(user, user, user, user)}
-                {this.renderRowCard(user, user, user, user)}
-                {this.renderRowCard(user, user, user, user)}
+                {this.renderRowCard(
+                  shopStarbucks,
+                  shopShabulaos,
+                  shopNamba,
+                  shopShinkansen
+                )}
+                {this.renderRowCard(
+                  shopMk,
+                  shopOppadaek,
+                  shopShabushi,
+                  shopGolddigger
+                )}
+                {this.renderRowCard(shopOchaya, shopCow, shopCosta, shopSandp)}
+                {this.renderRowCard(
+                  shopAuntie,
+                  shopBake,
+                  shopBurgerking,
+                  shopHaagendazs
+                )}
+                {this.renderRowCard(
+                  shopHokkaido,
+                  shopPablo,
+                  shopKorean,
+                  shopIhop
+                )}
+                {this.renderRowCard(
+                  shopKfc,
+                  shopSweet,
+                  shopMoomin,
+                  shopPancake
+                )}
+                <div
+                  style={{
+                    marginLeft: 20,
+                    marginTop: 10,
+                    marginBottom: 10
+                  }}
+                >
+                  {this.renderCard(shopSwensens)}
+                </div>
               </div>
             </Card>
           </div>
