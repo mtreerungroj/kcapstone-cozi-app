@@ -52,12 +52,17 @@ export default class HomeHomePage extends Component {
                 : <IconButton
                   color='inherit'
                   aria-label='notifications'
+                  onClick={() => this.props.openNotifications('home')}
                   style={{ marginRight: 0 }}
                   >
                   <Notifications />
                 </IconButton>}
 
-              <IconButton color='inherit' aria-label='search'>
+              <IconButton
+                color='inherit'
+                aria-label='search'
+                onClick={() => this.props.openSearch('home')}
+              >
                 <Search />
               </IconButton>
 

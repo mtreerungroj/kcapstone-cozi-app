@@ -18,9 +18,12 @@ export default class HomePage extends Component {
       case 'home':
         return (
           <HomeHomepage
+            oldPage={this.props.oldPage}
             changePage={this.changePage}
+            handleChange={this.props.handleChange}
             badge={this.props.badge}
             openNotifications={this.props.openNotifications}
+            openSearch={this.props.openSearch}
           />
         )
       case 'redeem':
@@ -29,14 +32,18 @@ export default class HomePage extends Component {
             changePage={this.changePage}
             badge={this.props.badge}
             openNotifications={this.props.openNotifications}
+            openSearch={this.props.openSearch}
           />
         )
       default:
         return (
           <HomeHomepage
+            oldPage={this.props.oldPage}
             changePage={this.changePage}
+            handleChange={this.props.handleChange}
             badge={this.props.badge}
             openNotifications={this.props.openNotifications}
+            openSearch={this.props.openSearch}
           />
         )
     }
