@@ -25,7 +25,7 @@ export default class Cozi extends Component {
     }
   }
 
-  handleChange = (event, page) => this.setState({ page })
+  handleChange = page => this.setState({ page })
 
   openNotifications = oldPage =>
     this.setState({ oldPage, page: 'notifications', badge: false })
@@ -113,7 +113,7 @@ export default class Cozi extends Component {
           <Divider />
           <BottomNavigation
             value={page}
-            onChange={this.handleChange}
+            onChange={(event, page) => this.handleChange(page)}
             showLabels
           >
             <BottomNavigationAction value='home' label='Home' icon={<Home />} />

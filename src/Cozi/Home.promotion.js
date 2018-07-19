@@ -5,6 +5,10 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import ListItem from '@material-ui/core/ListItem'
 import Divider from '@material-ui/core/Divider'
+import Badge from '@material-ui/core/Badge'
+import IconButton from '@material-ui/core/IconButton'
+import Notifications from '@material-ui/icons/Notifications'
+import Search from '@material-ui/icons/Search'
 
 import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use it manually.
 import 'simplebar/dist/simplebar.css'
@@ -40,7 +44,6 @@ export default class HomePromotion extends Component {
     return (
       <div
         style={{
-          // backgroundColor: 'red',
           height: '100vh',
           display: 'flex',
           flexDirection: 'column',
@@ -50,9 +53,46 @@ export default class HomePromotion extends Component {
         <div>
           <AppBar position='static' color='secondary'>
             <Toolbar>
-              <Typography variant='title' color='primary' align='center'>
+              <Typography
+                variant='title'
+                color='primary'
+                align='center'
+                style={{ flexGrow: 1, marginLeft: 100 }}
+              >
                 Promotion
               </Typography>
+
+              {this.props.badge
+                ? <IconButton
+                  color='inherit'
+                  aria-label='notifications'
+                  style={{ marginRight: 0 }}
+                  >
+                  <Badge
+                    badgeContent={'3'}
+                    color='error'
+                    onClick={() => this.props.openNotifications('promotion')}
+                    >
+                    <Notifications />
+                  </Badge>
+                </IconButton>
+                : <IconButton
+                  color='inherit'
+                  aria-label='notifications'
+                  onClick={() => this.props.openNotifications('promotion')}
+                  style={{ marginRight: 0 }}
+                  >
+                  <Notifications />
+                </IconButton>}
+
+              <IconButton
+                color='inherit'
+                aria-label='search'
+                onClick={() => this.props.openSearch('promotion')}
+              >
+                <Search />
+              </IconButton>
+
             </Toolbar>
           </AppBar>
         </div>

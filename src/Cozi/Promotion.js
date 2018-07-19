@@ -16,13 +16,49 @@ export default class Promotion extends Component {
   renderBody = () => {
     switch (this.state.page) {
       case 'home':
-        return <HomePromotion changePage={this.changePage} />
+        return (
+          <HomePromotion
+            oldPage={this.props.oldPage}
+            changePage={this.changePage}
+            handleChange={this.props.handleChange}
+            badge={this.props.badge}
+            openNotifications={this.props.openNotifications}
+            openSearch={this.props.openSearch}
+          />
+        )
       case 'detail1':
-        return <Detail1Promotion changePage={this.changePage} />
+        return (
+          <Detail1Promotion
+            oldPage={this.props.oldPage}
+            changePage={this.changePage}
+            handleChange={this.props.handleChange}
+            badge={this.props.badge}
+            openNotifications={this.props.openNotifications}
+            openSearch={this.props.openSearch}
+          />
+        )
       case 'detail2':
-        return <Detail2Promotion changePage={this.changePage} />
+        return (
+          <Detail2Promotion
+            oldPage={this.props.oldPage}
+            changePage={this.changePage}
+            handleChange={this.props.handleChange}
+            badge={this.props.badge}
+            openNotifications={this.props.openNotifications}
+            openSearch={this.props.openSearch}
+          />
+        )
       default:
-        return <HomePromotion changePage={this.changePage} />
+        return (
+          <HomePromotion
+            oldPage={this.props.oldPage}
+            changePage={this.changePage}
+            handleChange={this.props.handleChange}
+            badge={this.props.badge}
+            openNotifications={this.props.openNotifications}
+            openSearch={this.props.openSearch}
+          />
+        )
     }
   }
 

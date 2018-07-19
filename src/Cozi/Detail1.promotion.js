@@ -5,9 +5,12 @@ import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import Avatar from '@material-ui/core/Avatar'
 import ListItem from '@material-ui/core/ListItem'
+import Badge from '@material-ui/core/Badge'
 
 import IconButton from '@material-ui/core/IconButton'
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
+import Notifications from '@material-ui/icons/Notifications'
+import Search from '@material-ui/icons/Search'
 
 import promotionBurgerking from '../assets/images/promotion-burgerking.jpeg'
 import logoBurgerking from '../assets/images/logo-burgerking.png'
@@ -45,9 +48,46 @@ export default class Detail1Promotion extends Component {
               >
                 <KeyboardArrowLeft />
               </IconButton>
-              <Typography variant='title' color='primary' align='center'>
+              <Typography
+                variant='title'
+                color='primary'
+                align='center'
+                style={{ flexGrow: 1, marginLeft: 50 }}
+              >
                 Promotion
               </Typography>
+
+              {this.props.badge
+                ? <IconButton
+                  color='inherit'
+                  aria-label='notifications'
+                  style={{ marginRight: 0 }}
+                  >
+                  <Badge
+                    badgeContent={'3'}
+                    color='error'
+                    onClick={() => this.props.openNotifications('promotion')}
+                    >
+                    <Notifications />
+                  </Badge>
+                </IconButton>
+                : <IconButton
+                  color='inherit'
+                  aria-label='notifications'
+                  onClick={() => this.props.openNotifications('promotion')}
+                  style={{ marginRight: 0 }}
+                  >
+                  <Notifications />
+                </IconButton>}
+
+              <IconButton
+                color='inherit'
+                aria-label='search'
+                onClick={() => this.props.openSearch('promotion')}
+              >
+                <Search />
+              </IconButton>
+
             </Toolbar>
           </AppBar>
         </div>

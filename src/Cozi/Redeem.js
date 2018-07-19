@@ -11,10 +11,13 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import Snackbar from '@material-ui/core/Snackbar'
-import CloseIcon from '@material-ui/icons/Close'
+import Badge from '@material-ui/core/Badge'
 
+import CloseIcon from '@material-ui/icons/Close'
 import IconButton from '@material-ui/core/IconButton'
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
+import Notifications from '@material-ui/icons/Notifications'
+import Search from '@material-ui/icons/Search'
 
 import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use it manually.
 import 'simplebar/dist/simplebar.css'
@@ -177,9 +180,46 @@ export default class Redeem extends Component {
               >
                 <KeyboardArrowLeft />
               </IconButton>
-              <Typography variant='title' color='primary' align='center'>
+              <Typography
+                variant='title'
+                color='primary'
+                align='center'
+                style={{ flexGrow: 1, marginLeft: 30 }}
+              >
                 Redeem
               </Typography>
+
+              {this.props.badge
+                ? <IconButton
+                  color='inherit'
+                  aria-label='notifications'
+                  style={{ marginRight: 0 }}
+                  >
+                  <Badge
+                    badgeContent={'3'}
+                    color='error'
+                    onClick={() => this.props.openNotifications('home')}
+                    >
+                    <Notifications />
+                  </Badge>
+                </IconButton>
+                : <IconButton
+                  color='inherit'
+                  aria-label='notifications'
+                  onClick={() => this.props.openNotifications('home')}
+                  style={{ marginRight: 0 }}
+                  >
+                  <Notifications />
+                </IconButton>}
+
+              <IconButton
+                color='inherit'
+                aria-label='search'
+                onClick={() => this.props.openSearch('home')}
+              >
+                <Search />
+              </IconButton>
+
             </Toolbar>
           </AppBar>
 
