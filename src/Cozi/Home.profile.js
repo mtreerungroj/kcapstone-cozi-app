@@ -26,6 +26,11 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import Slide from '@material-ui/core/Slide'
 
+import Badge from '@material-ui/core/Badge'
+import IconButton from '@material-ui/core/IconButton'
+import Notifications from '@material-ui/icons/Notifications'
+import Search from '@material-ui/icons/Search'
+
 export default class HomeProfile extends Component {
   constructor (props) {
     super(props)
@@ -85,9 +90,46 @@ export default class HomeProfile extends Component {
         <div>
           <AppBar position='static' color='secondary'>
             <Toolbar>
-              <Typography variant='title' color='primary' align='center'>
+              <Typography
+                variant='title'
+                color='primary'
+                align='center'
+                style={{ flexGrow: 1, marginLeft: 100 }}
+              >
                 Profile
               </Typography>
+
+              {this.props.badge
+                ? <IconButton
+                  color='inherit'
+                  aria-label='notifications'
+                  style={{ marginRight: 0 }}
+                  >
+                  <Badge
+                    badgeContent={'3'}
+                    color='error'
+                    onClick={() => this.props.openNotifications('profile')}
+                    >
+                    <Notifications />
+                  </Badge>
+                </IconButton>
+                : <IconButton
+                  color='inherit'
+                  aria-label='notifications'
+                  onClick={() => this.props.openNotifications('profile')}
+                  style={{ marginRight: 0 }}
+                  >
+                  <Notifications />
+                </IconButton>}
+
+              <IconButton
+                color='inherit'
+                aria-label='search'
+                onClick={() => this.props.openSearch('profile')}
+              >
+                <Search />
+              </IconButton>
+
             </Toolbar>
           </AppBar>
         </div>

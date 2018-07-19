@@ -19,15 +19,34 @@ export default class Profile extends Component {
           <HomeProfile
             changePage={this.changePage}
             toggleAuth={this.props.toggleAuth}
+            oldPage={this.props.oldPage}
+            handleChange={this.props.handleChange}
+            badge={this.props.badge}
+            openNotifications={this.props.openNotifications}
+            openSearch={this.props.openSearch}
           />
         )
       case 'pointhistory':
-        return <PointHistory changePage={this.changePage} />
+        return (
+          <PointHistory
+            changePage={this.changePage}
+            oldPage={this.props.oldPage}
+            handleChange={this.props.handleChange}
+            badge={this.props.badge}
+            openNotifications={this.props.openNotifications}
+            openSearch={this.props.openSearch}
+          />
+        )
       default:
         return (
           <HomeProfile
             changePage={this.changePage}
             toggleAuth={this.props.toggleAuth}
+            oldPage={this.props.oldPage}
+            handleChange={this.props.handleChange}
+            badge={this.props.badge}
+            openNotifications={this.props.openNotifications}
+            openSearch={this.props.openSearch}
           />
         )
     }
