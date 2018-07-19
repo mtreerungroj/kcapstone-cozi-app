@@ -50,7 +50,12 @@ export default class Notifications extends Component {
               >
                 <KeyboardArrowLeft />
               </IconButton>
-              <Typography variant='title' color='primary' align='center'>
+              <Typography
+                variant='title'
+                color='primary'
+                align='center'
+                style={{ flexGrow: 1, marginLeft: 50, marginRight: 100 }}
+              >
                 Notification
               </Typography>
             </Toolbar>
