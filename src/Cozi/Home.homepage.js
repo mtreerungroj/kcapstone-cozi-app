@@ -104,7 +104,7 @@ export default class HomeHomePage extends Component {
           <Typography variant='title' color='inherit' align='center'>
             Favorite cards
           </Typography>
-          <FavCards />
+          <FavCards openCard={this.props.openCard} />
         </div>
       </div>
     )

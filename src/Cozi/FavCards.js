@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ListItem from '@material-ui/core/ListItem'
 
 import cardStarbuck from '../assets/images/card-starbuck.png'
 import cardCosta from '../assets/images/card-costa.png'
@@ -16,7 +17,13 @@ import 'simplebar/dist/simplebar.css'
 
 export default class Profile extends Component {
   renderCard = card => (
-    <img src={card} alt={card} style={{ width: '100%', height: 'auto' }} />
+    <ListItem
+      button
+      style={{ padding: 0 }}
+      onClick={() => this.props.openCard('home', card)}
+    >
+      <img src={card} alt={card} style={{ width: '100%', height: 'auto' }} />
+    </ListItem>
   )
 
   render () {

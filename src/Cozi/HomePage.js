@@ -24,6 +24,7 @@ export default class HomePage extends Component {
             badge={this.props.badge}
             openNotifications={this.props.openNotifications}
             openSearch={this.props.openSearch}
+            openCard={this.props.openCard}
           />
         )
       case 'redeem':
@@ -44,6 +45,7 @@ export default class HomePage extends Component {
             badge={this.props.badge}
             openNotifications={this.props.openNotifications}
             openSearch={this.props.openSearch}
+            openCard={this.props.openCard}
           />
         )
     }

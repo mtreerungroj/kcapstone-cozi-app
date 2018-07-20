@@ -15,6 +15,10 @@ import Profile from './Profile'
 import Notifications from './Notifications'
 import Search from './Search'
 
+import CardStarbucks from './CardStarbucks'
+import CardCosta from './CardCosta'
+import CardCoffee from './CardCoffee'
+
 export default class Cozi extends Component {
   constructor (props) {
     super(props)
@@ -32,6 +36,13 @@ export default class Cozi extends Component {
 
   openSearch = oldPage => this.setState({ oldPage, page: 'search' })
 
+  openCard = (oldPage, page) => {
+    ;(page === '/static/media/card-starbuck.eae6c4f0.png' ||
+      page === '/static/media/card-costa.37c0e119.png' ||
+      page === '/static/media/card-coffeebean.008af495.jpg') &&
+      this.setState({ oldPage, page })
+  }
+
   renderBody = () => {
     switch (this.state.page) {
       case 'home':
@@ -41,6 +52,7 @@ export default class Cozi extends Component {
             badge={this.state.badge}
             openNotifications={this.openNotifications}
             openSearch={this.openSearch}
+            openCard={this.openCard}
           />
         )
       case 'promotion':
@@ -81,6 +93,33 @@ export default class Cozi extends Component {
       case 'search':
         return (
           <Search oldPage={this.oldPage} handleChange={this.handleChange} />
+        )
+      case '/static/media/card-starbuck.eae6c4f0.png':
+        return (
+          <CardStarbucks
+            handleChange={this.handleChange}
+            badge={this.state.badge}
+            openNotifications={this.openNotifications}
+            openSearch={this.openSearch}
+          />
+        )
+      case '/static/media/card-costa.37c0e119.png':
+        return (
+          <CardCosta
+            handleChange={this.handleChange}
+            badge={this.state.badge}
+            openNotifications={this.openNotifications}
+            openSearch={this.openSearch}
+          />
+        )
+      case '/static/media/card-coffeebean.008af495.jpg':
+        return (
+          <CardCoffee
+            handleChange={this.handleChange}
+            badge={this.state.badge}
+            openNotifications={this.openNotifications}
+            openSearch={this.openSearch}
+          />
         )
       default:
         return (
