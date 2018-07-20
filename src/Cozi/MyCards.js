@@ -12,7 +12,6 @@ import Search from '@material-ui/icons/Search'
 import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use it manually.
 import 'simplebar/dist/simplebar.css'
 
-import user from '../assets/images/user.png'
 import shopBbqplaza from '../assets/images/shop_bbqplaza.png'
 import shopMk from '../assets/images/shop_mk.jpg'
 import shopAfteryou from '../assets/images/shop_afteryou.png'
