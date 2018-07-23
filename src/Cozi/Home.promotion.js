@@ -52,7 +52,7 @@ export default class HomePromotion extends Component {
       >
         <div>
           <AppBar position='static' color='secondary'>
-            <Toolbar>
+            <Toolbar style={{ padding: 0 }}>
               <Typography
                 variant='title'
                 color='primary'

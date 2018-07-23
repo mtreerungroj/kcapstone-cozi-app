@@ -38,7 +38,7 @@ export default class Search extends Component {
 
         <div>
           <AppBar position='static' color='secondary'>
-            <Toolbar>
+            <Toolbar style={{ padding: 0 }}>
               <IconButton
                 color='inherit'
                 aria-label='Menu'
@@ -46,7 +46,12 @@ export default class Search extends Component {
               >
                 <KeyboardArrowLeft />
               </IconButton>
-              <Typography variant='title' color='primary' align='center'>
+              <Typography
+                variant='title'
+                color='primary'
+                align='center'
+                style={{ flexGrow: 1, marginLeft: 50, marginRight: 100 }}
+              >
                 Search
               </Typography>
             </Toolbar>

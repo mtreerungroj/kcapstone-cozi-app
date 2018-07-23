@@ -77,7 +77,6 @@ export default class MyCards extends Component {
         marginBottom: 10
       }}
     >
-      {/* {console.log(sName)} */}
       {this.renderCard(store1, sName)}
       {this.renderCard(store2, sName2)}
       {this.renderCard(store3, sName3)}
@@ -97,7 +96,7 @@ export default class MyCards extends Component {
       >
         <div>
           <AppBar position='static' color='secondary'>
-            <Toolbar>
+            <Toolbar style={{ padding: 0 }}>
               <Typography
                 variant='title'
                 color='primary'

@@ -40,7 +40,7 @@ export default class Detail2Promotion extends Component {
       >
         <div>
           <AppBar position='static' color='secondary'>
-            <Toolbar>
+            <Toolbar style={{ padding: 0 }}>
               <IconButton
                 color='inherit'
                 aria-label='Menu'
