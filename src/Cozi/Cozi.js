@@ -97,6 +97,7 @@ export default class Cozi extends Component {
       case '/static/media/card-starbuck.eae6c4f0.png':
         return (
           <CardStarbucks
+            oldPage={this.state.oldPage}
             handleChange={this.handleChange}
             badge={this.state.badge}
             openNotifications={this.openNotifications}
@@ -106,6 +107,7 @@ export default class Cozi extends Component {
       case '/static/media/card-costa.37c0e119.png':
         return (
           <CardCosta
+            oldPage={this.state.oldPage}
             handleChange={this.handleChange}
             badge={this.state.badge}
             openNotifications={this.openNotifications}
@@ -115,6 +117,7 @@ export default class Cozi extends Component {
       case '/static/media/card-coffeebean.008af495.jpg':
         return (
           <CardCoffee
+            oldPage={this.state.oldPage}
             handleChange={this.handleChange}
             badge={this.state.badge}
             openNotifications={this.openNotifications}
