@@ -9,9 +9,6 @@ import { createFilter } from 'react-search-input'
 import { ListItem, Divider } from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 
-import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use it manually.
-import 'simplebar/dist/simplebar.css'
-
 const KEYS_TO_FILTERS = ['name']
 
 export default class Search extends Component {
@@ -26,9 +23,13 @@ export default class Search extends Component {
   handleChange = event => this.setState({ searchTerm: event.target.value })
 
   render () {
-    const filteredSearch = datas.filter(
+    let filteredSearch = datas.filter(
       createFilter(this.state.searchTerm, KEYS_TO_FILTERS)
     )
+
+    if (filteredSearch.length > 2) {
+      filteredSearch = [filteredSearch[0], filteredSearch[1]]
+    }
 
     return (
       <div
@@ -68,9 +69,9 @@ export default class Search extends Component {
           </AppBar>
         </div>
 
-        {/* <div data-simplebar style={{ height: 603, backgroundColor: 'red' }}> */}
         <div>
           {this.state.searchTerm !== '' &&
+            filteredSearch.length > 0 &&
             filteredSearch.map(data => {
               return (
                 <div key={data.id}>
