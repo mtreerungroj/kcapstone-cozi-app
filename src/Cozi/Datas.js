@@ -2,8 +2,7 @@ let datas = [
   {
     id: 1,
     name: 'MK Restuarant',
-    card: require('../assets/images/card-mk.jpg'),
-    promotion: require('../assets/images/card-mk.jpg')
+    card: require('../assets/images/card-mk.jpg')
   },
   {
     id: 2,

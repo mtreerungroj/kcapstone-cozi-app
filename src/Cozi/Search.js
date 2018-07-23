@@ -5,10 +5,14 @@ import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
 import datas from './Datas'
-import SearchInput, { createFilter } from 'react-search-input'
+import { createFilter } from 'react-search-input'
 import { ListItem, Divider } from '@material-ui/core'
+import TextField from '@material-ui/core/TextField'
 
-const KEYS_TO_FILTERS = ['name', 'promotion']
+import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use it manually.
+import 'simplebar/dist/simplebar.css'
+
+const KEYS_TO_FILTERS = ['name']
 
 export default class Search extends Component {
   constructor () {
@@ -19,7 +23,7 @@ export default class Search extends Component {
     }
   }
 
-  searchUpdated = term => this.setState({ searchTerm: term })
+  handleChange = event => this.setState({ searchTerm: event.target.value })
 
   render () {
     const filteredSearch = datas.filter(
@@ -37,7 +41,7 @@ export default class Search extends Component {
       >
 
         <div>
-          <AppBar position='static' color='secondary'>
+          <AppBar position='static' color='primary'>
             <Toolbar style={{ padding: 0 }}>
               <IconButton
                 color='inherit'
@@ -46,48 +50,40 @@ export default class Search extends Component {
               >
                 <KeyboardArrowLeft />
               </IconButton>
-              <Typography
-                variant='title'
-                color='primary'
-                align='center'
-                style={{ flexGrow: 1, marginLeft: 50, marginRight: 100 }}
-              >
-                Search
-              </Typography>
+
+              <TextField
+                autoFocus
+                id='search'
+                placeholder='Search cards, shops or promotions'
+                type='search'
+                onChange={this.handleChange}
+                style={{
+                  width: 340,
+                  fontSize: 20,
+                  marginRight: 30
+                }}
+              />
+
             </Toolbar>
           </AppBar>
         </div>
 
+        {/* <div data-simplebar style={{ height: 603, backgroundColor: 'red' }}> */}
         <div>
-          <SearchInput
-            onChange={this.searchUpdated}
-            style={{ width: '100%', height: 'auto', fontSize: 20 }}
-          />
           {this.state.searchTerm !== '' &&
             filteredSearch.map(data => {
               return (
                 <div key={data.id}>
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      fontSize: 20,
-                      fontWeight: 'bold',
-                      marginLeft: 20,
-                      padding: 8
-                    }}
+                  <Typography
+                    variant='title'
+                    style={{ marginLeft: 20, marginTop: 10 }}
                   >
-                    <div style={{ verticalAlign: 'middle' }}>
-                      {/* <Typography variant='subtitle' color='black' align='left'> */}
-                      {data.name}
-                      {/* </Typography> */}
-                    </div>
-                  </div>
-                  <Divider />
+                    {data.name}
+                  </Typography>
 
                   {data.card !== undefined &&
                     <div style={{ textAlign: 'center' }}>
-                      <ListItem button style={{ padding: 10 }}>
+                      <ListItem button style={{ textAlign: 'center' }}>
                         <img
                           src={data.card}
                           alt={data.card}
@@ -99,20 +95,16 @@ export default class Search extends Component {
                         />
                       </ListItem>
                     </div>}
-                  <br />
-                  <div>
-                    <ListItem button style={{ padding: 0 }}>
-                      {/* <div style={{ fontSize: 20, textAlign: 'center' }}>Promotion</div> */}
-                      <br />
-                      <img
-                        src={data.promotion}
-                        alt={data.promotion}
-                        style={{ width: '100%', height: 'auto' }}
-                      />
-                    </ListItem>
-                  </div>
+
+                  <ListItem button style={{ padding: 0, marginBottom: 5 }}>
+                    <img
+                      src={data.promotion}
+                      alt={data.promotion}
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+                  </ListItem>
+
                   <Divider />
-                  {/* <div>{data.promotion}</div> */}
                 </div>
               )
             })}
