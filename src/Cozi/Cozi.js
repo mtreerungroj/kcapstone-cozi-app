@@ -95,7 +95,11 @@ export default class Cozi extends Component {
         )
       case 'search':
         return (
-          <Search oldPage={this.oldPage} handleChange={this.handleChange} />
+          <Search
+            oldPage={this.state.oldPage}
+            handleChange={this.handleChange}
+            openCard={this.openCard}
+          />
         )
       case 'starbucks':
         return (
@@ -151,7 +155,7 @@ export default class Cozi extends Component {
 
   render () {
     const { page } = this.state
-    console.log(this.state)
+
     return (
       <div
         style={{
