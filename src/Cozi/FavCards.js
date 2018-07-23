@@ -16,11 +16,11 @@ import 'simplebar' // or "import SimpleBar from 'simplebar';" if you want to use
 import 'simplebar/dist/simplebar.css'
 
 export default class Profile extends Component {
-  renderCard = card => (
+  renderCard = (card, cardName = '') => (
     <ListItem
       button
       style={{ padding: 0 }}
-      onClick={() => this.props.openCard('home', card)}
+      onClick={() => this.props.openCard('home', cardName)}
     >
       <img src={card} alt={card} style={{ width: '100%', height: 'auto' }} />
     </ListItem>
@@ -32,16 +32,16 @@ export default class Profile extends Component {
 
         <div style={styles.outerContainer}>
           <div style={styles.innerContainer}>
-            {this.renderCard(cardStarbuck)}
+            {this.renderCard(cardStarbuck, 'starbucks')}
           </div>
           <div style={styles.innerContainer}>
-            {this.renderCard(cardCosta)}
+            {this.renderCard(cardCosta, 'costa')}
           </div>
         </div>
 
         <div style={styles.outerContainer}>
           <div style={styles.innerContainer}>
-            {this.renderCard(cardCoffeebean)}
+            {this.renderCard(cardCoffeebean, 'coffeebean')}
           </div>
           <div style={styles.innerContainer}>
             {this.renderCard(cardLoft)}
@@ -53,7 +53,7 @@ export default class Profile extends Component {
             {this.renderCard(cardWatsons)}
           </div>
           <div style={styles.innerContainer}>
-            {this.renderCard(cardMk)}
+            {this.renderCard(cardMk, 'mk')}
           </div>
         </div>
 

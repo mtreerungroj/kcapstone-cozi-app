@@ -47,17 +47,27 @@ export default class MyCards extends Component {
     this.state = {}
   }
 
-  renderCard = store => (
+  renderCard = (store, storeName = '') => (
     <IconButton
       color='inherit'
       aria-label='store'
       style={{ width: 80, height: 80 }}
+      onClick={() => this.props.openCard('mycards', storeName)}
     >
       <Avatar alt={store} src={store} style={{ width: 80, height: 80 }} />
     </IconButton>
   )
 
-  renderRowCard = (store1, store2, store3, store4) => (
+  renderRowCard = (
+    store1,
+    store2,
+    store3,
+    store4,
+    sName = '',
+    sName2 = '',
+    sName3 = '',
+    sName4 = ''
+  ) => (
     <div
       style={{
         display: 'flex',
@@ -67,10 +77,11 @@ export default class MyCards extends Component {
         marginBottom: 10
       }}
     >
-      {this.renderCard(store1)}
-      {this.renderCard(store2)}
-      {this.renderCard(store3)}
-      {this.renderCard(store4)}
+      {/* {console.log(sName)} */}
+      {this.renderCard(store1, sName)}
+      {this.renderCard(store2, sName2)}
+      {this.renderCard(store3, sName3)}
+      {this.renderCard(store4, sName4)}
     </div>
   )
 
@@ -149,7 +160,9 @@ export default class MyCards extends Component {
               shopBbqplaza,
               shopMk,
               shopAfteryou,
-              shopShabushi
+              shopShabushi,
+              '',
+              'mk'
             )}
           </Card>
 
@@ -163,7 +176,10 @@ export default class MyCards extends Component {
               shopStarbucks,
               shopCoffee,
               shopCosta,
-              shopShabushi
+              shopShabushi,
+              'starbucks',
+              'coffeebean',
+              'costa'
             )}
           </Card>
 
@@ -184,15 +200,25 @@ export default class MyCards extends Component {
                   shopStarbucks,
                   shopShabulaos,
                   shopNamba,
-                  shopShinkansen
+                  shopShinkansen,
+                  'starbucks'
                 )}
                 {this.renderRowCard(
                   shopMk,
                   shopOppadaek,
                   shopShabushi,
-                  shopGolddigger
+                  shopGolddigger,
+                  'mk'
                 )}
-                {this.renderRowCard(shopOchaya, shopCow, shopCosta, shopSandp)}
+                {this.renderRowCard(
+                  shopOchaya,
+                  shopCow,
+                  shopCosta,
+                  shopSandp,
+                  '',
+                  '',
+                  'costa'
+                )}
                 {this.renderRowCard(
                   shopAuntie,
                   shopBake,

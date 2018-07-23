@@ -29,7 +29,6 @@ export default class CardStabucks extends Component {
   }
 
   render () {
-    console.log(this.props)
     return (
       <div
         style={{
@@ -66,7 +65,8 @@ export default class CardStabucks extends Component {
                   <Badge
                     badgeContent={'3'}
                     color='error'
-                    onClick={() => this.props.openNotifications('home')}
+                    onClick={() =>
+                        this.props.openNotifications(this.props.oldPage)}
                     >
                     <Notifications />
                   </Badge>
@@ -74,7 +74,8 @@ export default class CardStabucks extends Component {
                 : <IconButton
                   color='inherit'
                   aria-label='notifications'
-                  onClick={() => this.props.openNotifications('home')}
+                  onClick={() =>
+                      this.props.openNotifications(this.props.oldPage)}
                   style={{ marginRight: 0 }}
                   >
                   <Notifications />
@@ -83,7 +84,7 @@ export default class CardStabucks extends Component {
               <IconButton
                 color='inherit'
                 aria-label='search'
-                onClick={() => this.props.openSearch('home')}
+                onClick={() => this.props.openSearch(this.props.oldPage)}
               >
                 <Search />
               </IconButton>

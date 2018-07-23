@@ -18,6 +18,7 @@ import Search from './Search'
 import CardStarbucks from './CardStarbucks'
 import CardCosta from './CardCosta'
 import CardCoffee from './CardCoffee'
+import CardMk from './CardMk'
 
 export default class Cozi extends Component {
   constructor (props) {
@@ -36,11 +37,12 @@ export default class Cozi extends Component {
 
   openSearch = oldPage => this.setState({ oldPage, page: 'search' })
 
-  openCard = (oldPage, page) => {
-    ;(page === '/static/media/card-starbuck.eae6c4f0.png' ||
-      page === '/static/media/card-costa.37c0e119.png' ||
-      page === '/static/media/card-coffeebean.008af495.jpg') &&
-      this.setState({ oldPage, page })
+  openCard = (oldPage, storeName) => {
+    ;(storeName === 'starbucks' ||
+      storeName === 'costa' ||
+      storeName === 'coffeebean' ||
+      storeName === 'mk') &&
+      this.setState({ oldPage, page: storeName })
   }
 
   renderBody = () => {
@@ -71,6 +73,7 @@ export default class Cozi extends Component {
             badge={this.state.badge}
             openNotifications={this.openNotifications}
             openSearch={this.openSearch}
+            openCard={this.openCard}
           />
         )
       case 'profile':
@@ -94,7 +97,7 @@ export default class Cozi extends Component {
         return (
           <Search oldPage={this.oldPage} handleChange={this.handleChange} />
         )
-      case '/static/media/card-starbuck.eae6c4f0.png':
+      case 'starbucks':
         return (
           <CardStarbucks
             oldPage={this.state.oldPage}
@@ -104,7 +107,7 @@ export default class Cozi extends Component {
             openSearch={this.openSearch}
           />
         )
-      case '/static/media/card-costa.37c0e119.png':
+      case 'costa':
         return (
           <CardCosta
             oldPage={this.state.oldPage}
@@ -114,9 +117,19 @@ export default class Cozi extends Component {
             openSearch={this.openSearch}
           />
         )
-      case '/static/media/card-coffeebean.008af495.jpg':
+      case 'coffeebean':
         return (
           <CardCoffee
+            oldPage={this.state.oldPage}
+            handleChange={this.handleChange}
+            badge={this.state.badge}
+            openNotifications={this.openNotifications}
+            openSearch={this.openSearch}
+          />
+        )
+      case 'mk':
+        return (
+          <CardMk
             oldPage={this.state.oldPage}
             handleChange={this.handleChange}
             badge={this.state.badge}
@@ -138,7 +151,7 @@ export default class Cozi extends Component {
 
   render () {
     const { page } = this.state
-
+    console.log(this.state)
     return (
       <div
         style={{
