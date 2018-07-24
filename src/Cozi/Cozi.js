@@ -20,13 +20,25 @@ import CardCosta from './CardCosta'
 import CardCoffee from './CardCoffee'
 import CardMk from './CardMk'
 
+import Button from '@material-ui/core/Button'
+import QrButton from '../assets/images/qr-button.png'
+import QrCode from '../assets/images/qr-code.png'
+
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import Slide from '@material-ui/core/Slide'
+import Typography from '@material-ui/core/Typography'
+
 export default class Cozi extends Component {
   constructor (props) {
     super(props)
     this.state = {
       page: 'home',
       badge: true,
-      oldPage: 'home'
+      oldPage: 'home',
+      openDialog: false
     }
   }
 
@@ -153,6 +165,16 @@ export default class Cozi extends Component {
     }
   }
 
+  Transition = props => <Slide direction='up' {...props} />
+
+  handleClickOpenDialog = () => {
+    this.setState({ openDialog: true })
+  }
+
+  handleCloseDialog = () => {
+    this.setState({ openDialog: false })
+  }
+
   render () {
     const { page } = this.state
 
@@ -165,9 +187,50 @@ export default class Cozi extends Component {
           flex: 1
         }}
       >
+
+        <Dialog
+          open={this.state.openDialog}
+          TransitionComponent={this.Transition}
+          keepMounted
+          onClose={this.handleCloseDialog}
+          aria-labelledby='alert-dialog-slide-title'
+          aria-describedby='alert-dialog-slide-description'
+        >
+          <DialogContent>
+            <Typography variant='title' gutterBottom align='center'>
+              Scan QR code at the store to collect points
+            </Typography>
+            <div style={{ textAlign: 'center' }}>
+              <img src={QrCode} alt='qr-code' />
+            </div>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={this.handleCloseDialog} color='primary'>
+              Done
+            </Button>
+          </DialogActions>
+        </Dialog>
+
         <div style={{ display: 'flex', flex: 1 }}>
           {this.renderBody()}
         </div>
+
+        <div style={{ textAlign: 'right', marginRight: 10, marginBottom: 10 }}>
+          <Button
+            variant='fab'
+            color='primary'
+            aria-label='Add'
+            style={{ width: 80, height: 80 }}
+            onClick={this.handleClickOpenDialog}
+          >
+            <img
+              src={QrButton}
+              alt='qr-button'
+              style={{ width: 80, height: 80 }}
+            />
+          </Button>
+        </div>
+
         <div>
           <Divider />
           <BottomNavigation
