@@ -20,6 +20,10 @@ import noti7 from '../assets/images/noti7.png'
 import noti8 from '../assets/images/noti8.png'
 import noti9 from '../assets/images/noti9.png'
 
+import noti1read from '../assets/images/noti1-read.png'
+import noti2read from '../assets/images/noti2-read.png'
+import noti3read from '../assets/images/noti3-read.png'
+
 export default class Notifications extends Component {
   rendernotification = Noti => (
     <div>
@@ -30,6 +34,8 @@ export default class Notifications extends Component {
   )
 
   render () {
+    const isBadge = this.props.badge
+
     return (
       <div
         style={{
@@ -63,9 +69,9 @@ export default class Notifications extends Component {
         </div>
         <div style={{ display: 'flex', flex: 1 }}>
           <div data-simplebar style={{ height: 603 }}>
-            {this.rendernotification(noti1)}
-            {this.rendernotification(noti2)}
-            {this.rendernotification(noti3)}
+            {this.rendernotification(isBadge ? noti1 : noti1read)}
+            {this.rendernotification(isBadge ? noti2 : noti2read)}
+            {this.rendernotification(isBadge ? noti3 : noti3read)}
             {this.rendernotification(noti4)}
             {this.rendernotification(noti5)}
             {this.rendernotification(noti6)}

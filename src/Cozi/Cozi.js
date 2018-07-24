@@ -43,8 +43,12 @@ export default class Cozi extends Component {
 
   handleChange = page => this.setState({ page })
 
-  openNotifications = oldPage =>
-    this.setState({ oldPage, page: 'notifications', badge: false })
+  openNotifications = oldPage => {
+    this.setState({ oldPage, page: 'notifications' })
+    setTimeout(() => {
+      this.setState({ badge: false })
+    }, 2000)
+  }
 
   openSearch = oldPage => this.setState({ oldPage, page: 'search' })
 
@@ -100,6 +104,7 @@ export default class Cozi extends Component {
       case 'notifications':
         return (
           <Notifications
+            badge={this.state.badge}
             oldPage={this.state.oldPage}
             handleChange={this.handleChange}
           />
