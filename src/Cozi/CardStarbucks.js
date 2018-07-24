@@ -54,7 +54,7 @@ export default class CardStabucks extends Component {
                 align='center'
                 style={{ flexGrow: 1, marginLeft: 50 }}
               >
-                Costa Coffee Club
+                Fresh Milk
               </Typography>
               {this.props.badge
                 ? <IconButton
