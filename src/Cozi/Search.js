@@ -84,7 +84,15 @@ export default class Search extends Component {
 
                   {data.card !== undefined &&
                     <div style={{ textAlign: 'center' }}>
-                      <ListItem button style={{ textAlign: 'center' }}>
+                      <ListItem
+                        button
+                        style={{ textAlign: 'center' }}
+                        onClick={() =>
+                          this.props.openCard(
+                            this.props.oldPage,
+                            data.cardName
+                          )}
+                      >
                         <img
                           src={data.card}
                           alt={data.card}

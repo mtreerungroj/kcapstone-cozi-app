@@ -2,13 +2,15 @@ let datas = [
   {
     id: 1,
     name: 'MK Restuarant',
-    card: require('../assets/images/card-mk.jpg')
+    card: require('../assets/images/card-mk.jpg'),
+    cardName: 'mk'
   },
   {
     id: 2,
     name: 'Starbucks',
     card: require('../assets/images/card-starbuck.png'),
-    promotion: require('../assets/images/promotion2.PNG')
+    promotion: require('../assets/images/promotion2.PNG'),
+    cardName: 'starbucks'
   },
   {
     id: 3,
